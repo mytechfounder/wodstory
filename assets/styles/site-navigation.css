@@ -195,6 +195,14 @@ body.site-menu-open { overflow: hidden; }
   .site-nav-logo { margin-left: calc(191px - max(20px, calc(50vw - 590px))); }
 }
 
+@media (max-width: 960px) {
+  .site-nav { width: min(100% - 32px, 1180px); min-height: 72px; }
+  .site-nav-logo { margin-left: -4px; }
+  .site-nav-logo img { width: 146px; }
+  .site-nav-desktop { display: none; }
+  .site-menu-button { display: grid; }
+}
+
 @media (max-width: 760px) {
   .site-nav { width: min(100% - 28px, 1180px); min-height: 72px; }
   .site-nav-logo { margin-left: -7px; }
