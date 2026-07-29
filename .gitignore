@@ -1,0 +1,8 @@
+.DS_Store
+.pnpm-store/
+wod-community-app/
+.vercel/
+.env
+.env.*
+.htaccess
+

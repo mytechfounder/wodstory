@@ -1,0 +1,11 @@
+.DS_Store
+.pnpm-store
+wod-community-app
+.git
+.github
+.agents
+.codex
+.env
+.env.*
+.htaccess
+

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "CinzelWOD";
+  src: url("../fonts/cinzel/Cinzel-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.cinzel-en {
+  display: inline !important;
+  font-family: "CinzelWOD", Georgia, serif !important;
+  font-optical-sizing: auto;
+  line-height: inherit;
+  letter-spacing: .025em;
+  vertical-align: baseline;
+}
