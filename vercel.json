@@ -2,6 +2,32 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/blog-sitemap.xml",
+      "destination": "https://app.wodstory.com/blog/sitemap.xml"
+    },
+    {
+      "source": "/feed.xml",
+      "destination": "https://app.wodstory.com/blog/rss.xml"
+    },
+    {
+      "source": "/blog",
+      "destination": "https://app.wodstory.com/blog"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://app.wodstory.com/blog/:path*"
+    },
+    {
+      "source": "/_next/:path*",
+      "destination": "https://app.wodstory.com/_next/:path*"
+    },
+    {
+      "source": "/fonts/:path*",
+      "destination": "https://app.wodstory.com/fonts/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
