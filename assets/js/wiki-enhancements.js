@@ -694,6 +694,15 @@
     }
   }
 
+  function initializeImageFallbacks() {
+    document.querySelectorAll(".wiki-image-slot img").forEach((image) => {
+      image.addEventListener("error", () => {
+        image.hidden = true;
+        image.closest(".wiki-image-slot")?.classList.add("is-empty");
+      });
+    });
+  }
+
   function initializeSiteChrome() {
     const preloader = document.querySelector(".preloader");
     const scrollButton = document.getElementById("scrollToTop");
@@ -727,6 +736,7 @@
   window.addEventListener("DOMContentLoaded", () => {
     arrangeWikiArticleSidebars();
     initializeEntryVisuals();
+    initializeImageFallbacks();
     initializeCategoryButtons();
     buildEntryIndex();
     linkifyWikiArticles();

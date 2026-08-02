@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/blog-sitemap.xml",
@@ -54,7 +61,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://tools.dezigniacs.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' data: https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://app.wodstory.com https://tools.dezigniacs.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+          "value": "default-src 'self'; script-src 'self' 'sha256-mkHT2nSuMdclOHqy3ZoQKP30W1Rb9R29UVgZfa8XX0M=' 'sha256-CG75nI86TyugH0LPyod/SQ8BYaKDhqBlxD5V988quFw=' 'sha256-FJMDVnmdWYN6gc8vhPdmTeHS2EU8qfcomH7p1zUAekw=' https://tools.dezigniacs.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' data: https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://app.wodstory.com https://tools.dezigniacs.com; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
         }
       ]
     },
@@ -63,7 +70,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
     }
