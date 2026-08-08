@@ -22,12 +22,15 @@
   function initializeVerticalRails() {
     document.querySelectorAll(".infinity-slide-vertical .swiper-wrapper").forEach(function (wrapper) {
       wrapper.style.flexDirection = "column";
+      wrapper.style.transform = "none";
+      wrapper.style.height = "auto";
     });
   }
 
   function initializeHeroCarousel() {
     const carousel = document.querySelector('[data-carousel-name="home-hero-slider"]');
     if (!carousel) return;
+    if (carousel.dataset.carouselReady === "true") return;
 
     const mainWrapper = carousel.querySelector(".thumbs-gallery-main > .swiper-wrapper");
     const thumbnailWrapper = carousel.querySelector(".thumbs-gallery > .swiper-wrapper");
@@ -43,8 +46,10 @@
     if (!slides.length || thumbnails.length !== slides.length) return;
 
     allThumbnails.slice(slides.length).forEach(function (thumbnail) {
-      thumbnail.hidden = true;
+      thumbnail.remove();
     });
+
+    carousel.dataset.carouselReady = "true";
 
     mainWrapper.style.transform = "none";
     thumbnailWrapper.style.transform = "none";
@@ -71,6 +76,8 @@
       slides.forEach(function (slide, slideIndex) {
         const isActive = slideIndex === activeIndex;
         slide.hidden = !isActive;
+        if (isActive) slide.style.removeProperty("display");
+        else slide.style.display = "none";
         slide.classList.toggle("swiper-slide-active", isActive);
         slide.setAttribute("aria-hidden", String(!isActive));
         if (isActive) playVideo(slide);
@@ -81,6 +88,7 @@
         const isActive = thumbnailIndex === activeIndex;
         thumbnail.classList.toggle("swiper-slide-thumb-active", isActive);
         thumbnail.setAttribute("aria-current", isActive ? "true" : "false");
+        thumbnail.setAttribute("aria-pressed", String(isActive));
         thumbnail.tabIndex = 0;
       });
 
@@ -100,7 +108,8 @@
       thumbnail.style.flexShrink = "0";
       thumbnail.setAttribute("role", "button");
       thumbnail.setAttribute("aria-label", "Προβολή βιβλίου " + (index + 1));
-      thumbnail.addEventListener("click", function () {
+      thumbnail.addEventListener("click", function (event) {
+        event.preventDefault();
         showSlide(index, true);
       });
       thumbnail.addEventListener("keydown", function (event) {

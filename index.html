@@ -171,8 +171,8 @@
   }
   </script>
   
-<script defer src="assets/js/public-app.js?v=2"></script><link href="assets/styles/app.css?v=2" rel="stylesheet">
-  <link href="assets/styles/book-order.css?v=3" rel="stylesheet">
+<script defer src="assets/js/public-app.js?v=3"></script><link href="assets/styles/app.css?v=2" rel="stylesheet">
+  <link href="assets/styles/book-order.css?v=4" rel="stylesheet">
   <link href="assets/styles/creator-profile.css?v=3" rel="stylesheet">
   <link href="assets/styles/cookie-consent.css?v=2" rel="stylesheet">
   <link href="assets/styles/site-navigation.css?v=8" rel="stylesheet">
@@ -619,30 +619,6 @@
               <div
                 class="thumbs-gallery xxl:w-[572px] lg:w-[400px] md:w-[380px] xsm:w-[300px] w-full h-fit overflow-hidden">
                 <div class="swiper-wrapper pb-10">
-                  <div class="swiper-slide">
-                    <div class="hero-thumb-card overflow-hidden cursor-pointer rounded-20">
-                      <img
-                        class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                        src="./assets/images/optimized/hero1-video-thumb.jpg?v=2" width="720" height="275" loading="lazy" decoding="async" alt="Η Πτώση των Θεών — στιγμιότυπο από το hero video">
-                      <span class="hero-thumb-status is-live">Κυκλοφορεί</span>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="hero-thumb-card overflow-hidden cursor-pointer rounded-20">
-                      <img
-                        class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                        src="./assets/images/optimized/hero2-video-thumb.jpg?v=1" width="720" height="275" loading="lazy" decoding="async" alt="Οι Κληρονόμοι — στιγμιότυπο από το hero video">
-                      <span class="hero-thumb-status is-upcoming">Έρχεται <strong>2027</strong></span>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="hero-thumb-card overflow-hidden cursor-pointer rounded-20">
-                      <img
-                        class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                        src="./assets/images/optimized/hero3-720.webp" width="720" height="275" loading="lazy" decoding="async" alt="Βιβλίο ΙΙΙ thumbnail">
-                      <span class="hero-thumb-status is-upcoming">Έρχεται <strong>2028</strong></span>
-                    </div>
-                  </div>
                   <div class="swiper-slide">
                     <div class="hero-thumb-card overflow-hidden cursor-pointer rounded-20">
                       <img
@@ -2316,6 +2292,25 @@
           outline:none;
       }
 
+      @media (min-width: 992px){
+          .wod-avatar-rail .infinity-slide-vertical .swiper-wrapper{
+              display:flex;
+              min-height:100%;
+              flex-direction:column;
+              align-items:center;
+              justify-content:center;
+              gap:16px;
+              transform:none !important;
+          }
+
+          .wod-avatar-rail .infinity-slide-vertical .swiper-slide{
+              width:60px;
+              height:60px;
+              flex:0 0 60px;
+              margin:0 !important;
+          }
+      }
+
       .mobile-avatar-title{
           display:block;
           width:92px;
@@ -2630,7 +2625,7 @@
   <script src="assets/js/social-app-links.js?v=2"></script>
   <script src="assets/js/book-slider.js?v=1"></script>
   <script src="assets/js/hero-media.js?v=1"></script>
-  <script src="assets/js/book-order.js?v=10"></script>
+  <script src="assets/js/book-order.js?v=11"></script>
   <script src="assets/js/creator-profile.js?v=5"></script>
   <script src="assets/js/cookie-consent.js?v=2"></script>
   <script src="assets/js/newsletter-signup.js?v=1"></script>

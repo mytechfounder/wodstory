@@ -11,6 +11,16 @@
    */
   const ORDER_OPTIONS = [
     {
+      label: "Αγορά από Public",
+      note: "Διαθέσιμο για παραγγελία",
+      url: "https://lxbgvx.short.gy/public",
+      icon: "assets/images/optimized/ui/public-112.webp",
+      iconSize: 28,
+      enabled: true,
+      visible: true,
+      recommended: true
+    },
+    {
       label: "Αγορά από Skroutz",
       note: "Παραγγελία μέσω Skroutz",
       url: "https://lxbgvx.short.gy/skroutz",
@@ -26,15 +36,6 @@
       icon: "assets/images/optimized/ui/meltemi-112.webp",
       iconSize: 28,
       enabled: true,
-      visible: true
-    },
-    {
-      label: "Αγορά από Public",
-      note: "Διαθέσιμο σύντομα",
-      url: "",
-      icon: "assets/images/optimized/ui/public-112.webp",
-      iconSize: 28,
-      enabled: false,
       visible: true
     },
     {
@@ -72,6 +73,7 @@
 
     const link = document.createElement("a");
     link.className = "book-order-option";
+    if (option.recommended) link.classList.add("is-recommended");
     link.href = option.url || "#";
     link.style.setProperty("--order-icon-size", `${option.iconSize}px`);
     link.innerHTML = `
@@ -80,7 +82,10 @@
       </span>
       <span class="book-order-option-copy">
         <span class="book-order-option-label">${option.label}</span>
-        <span class="book-order-option-note">${option.note}</span>
+        <span class="book-order-option-meta">
+          <span class="book-order-option-note">${option.note}</span>
+          ${option.recommended ? '<span class="book-order-recommended">Προτεινόμενο</span>' : ""}
+        </span>
       </span>
       <span class="book-order-arrow" aria-hidden="true">→</span>`;
 

@@ -126,6 +126,18 @@
   outline: none;
 }
 
+.book-order-option.is-recommended {
+  border-color: rgba(242, 150, 32, 0.62);
+  background: rgba(242, 150, 32, 0.045);
+  box-shadow: inset 0 0 0 1px rgba(242, 150, 32, 0.05);
+}
+
+.book-order-option.is-recommended:hover,
+.book-order-option.is-recommended:focus-visible {
+  border-color: rgba(242, 150, 32, 0.9);
+  background: rgba(242, 150, 32, 0.085);
+}
+
 .book-order-icon-wrap {
   display: grid;
   place-items: center;
@@ -151,6 +163,14 @@
   display: block;
 }
 
+.book-order-option-meta {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  margin-top: 3px;
+}
+
 .book-order-option-label {
   overflow: hidden;
   color: inherit;
@@ -160,9 +180,23 @@
 }
 
 .book-order-option-note {
-  margin-top: 3px;
   color: rgba(255, 255, 255, 0.43);
   font: 400 12px/1.25 Arial, sans-serif;
+}
+
+.book-order-recommended {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 17px;
+  padding: 2px 6px;
+  color: #f5a43a;
+  border: 1px solid rgba(242, 150, 32, 0.34);
+  border-radius: 999px;
+  background: rgba(242, 150, 32, 0.075);
+  font: 700 8px/1 Arial, sans-serif;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
 }
 
 .book-order-arrow {
@@ -242,6 +276,20 @@ body.book-order-modal-open {
 
   .book-order-option-label {
     font-size: 14px !important;
+  }
+
+  .book-order-option-meta {
+    gap: 5px;
+  }
+
+  .book-order-option-note {
+    font-size: 11px;
+  }
+
+  .book-order-recommended {
+    min-height: 16px;
+    padding-inline: 5px;
+    font-size: 7px;
   }
 }
 
